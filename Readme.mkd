@@ -8,9 +8,18 @@ be caught by a analysis tool.
 The library is self-contained and should therefor be easy to run.
 
     java -cp baseline.jar edu.ucla.pls.baseline.<CASE>
+    
+    
+## Cases
 
-## Deadlocks
+### Transfer
 
-The following examples contains deadlocks
+- deadlock
+- concurrent
 
-- Transfer
+Transfer is the canonical example of a deadlock. Transfer tries to transfer some
+amount from one store to another. The algorithm tries to be safe, by first
+locking the initial store and then the other, so that no dataraces can occur.
+Sadly does another transfer do the same thing (in the oposite order), if
+unlucky, then these two transfers will deadlock by waiting for the other store
+to be free forever.
