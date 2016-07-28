@@ -1,8 +1,11 @@
-<!-- Borrowed and mudified from https://ant.apache.org/manual/tutorial-HelloWorldWithAnt.html -->
-<project>
+<!-- Borrowed and modified from https://ant.apache.org/manual/tutorial-HelloWorldWithAnt.html -->
+<project default="jar">
     <target name="compile">
         <mkdir dir="build/classes"/>
-        <javac srcdir="src" destdir="build/classes"/>
+        <javac srcdir="src" 
+            destdir="build/classes" 
+            debug="true" 
+            debuglevel="lines,source,vars"/>
     </target>
     
     <target name="jar" depends="compile">
