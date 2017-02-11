@@ -14,7 +14,7 @@ The library is self-contained and should therefor be easy to run.
 
 ### Transfer
 
-- deadlock
+- resource deadlock
 - concurrent
 
 Transfer is the canonical example of a deadlock. Transfer tries to transfer some
@@ -23,3 +23,11 @@ locking the initial store and then the other, so that no dataraces can occur.
 Sadly does another transfer do the same thing (in the oposite order), if
 unlucky, then these two transfers will deadlock by waiting for the other store
 to be free forever.
+
+### Infinite
+
+- infinite loop
+- communication deadlock
+
+Infinite is a infinite loop of code, using a wait operations to limit the amount 
+of the processor usage.
