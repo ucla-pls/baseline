@@ -52,6 +52,6 @@ class ReflectionTarget {
     }
 
     private void methodB(String b) {
-        System.out.println("private methodB: %s%n", b);
+        System.out.format("private methodB: %s%n", b);
     }
 }
