@@ -15,10 +15,6 @@ import java.lang.reflect.InvocationTargetException;
 public class Reflection {
     public static void main(String[] args) {
         try {
-            // Call public method w/o reflection
-            ReflectionTarget rf = new ReflectionTarget();
-            rf.methodA("Test without reflection");
-
             Class<?> c = Class.forName("ReflectionTarget");
             Object o = c.newInstance();
             Method[] methods = c.getDeclaredMethods();
@@ -48,18 +44,14 @@ public class Reflection {
 
 class ReflectionTarget {
     public ReflectionTarget() {
-        methodC("Calling From ReflectionTarget constructor");
+        methodB("Calling From ReflectionTarget constructor");
     }
 
     public void methodA(String a) {
         System.out.format("public methodA: %s%n", a);
     }
 
-    public void methodB(String b) {
-        System.out.format("public methodB: %s%n", b);
-    }
-
-    private void methodC(String c) {
-        System.out.format("private methodC: %s%n", c);
+    private void methodB(String b) {
+        System.out.format("private methodB: %s%n", b);
     }
 }
