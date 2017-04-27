@@ -1,6 +1,6 @@
 package edu.ucla.pls.baseline;
 /**
- * Infinit is a simple example of a non-terminating program.
+ * Infinite is a simple example of a non-terminating program.
  *
  * @author Christian Gram Kalhauge
  */
