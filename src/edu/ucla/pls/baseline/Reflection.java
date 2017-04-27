@@ -49,9 +49,14 @@ class ReflectionTarget {
 
     public void methodA(String a) {
         System.out.format("public methodA: %s%n", a);
+        methodC(a);
     }
 
     private void methodB(String b) {
         System.out.format("private methodB: %s%n", b);
+    }
+
+    private void methodC(String c) {
+        System.out.format("private methodC: %s%n", c);
     }
 }
