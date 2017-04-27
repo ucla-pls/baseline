@@ -15,7 +15,7 @@ import java.lang.reflect.InvocationTargetException;
 public class Reflection {
     public static void main(String[] args) {
         try {
-            Class<?> c = Class.forName("ReflectionTarget");
+            Class<?> c = Class.forName("edu.ucla.pls.baseline.ReflectionTarget");
             Object o = c.newInstance();
             Method[] methods = c.getDeclaredMethods();
             // Set each method as accessible and invoke public methods
