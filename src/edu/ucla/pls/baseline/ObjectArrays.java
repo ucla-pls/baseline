@@ -11,10 +11,12 @@ public class ObjectArrays {
 
     public static void main(String[] args) {
       new Test0().runTest();
+      new Test1().runTest();
       new TestA().runTest();
       new TestB().runTest();
       new TestC().runTest();
       new TestD().runTest();
+      new TestE().runTest();
     }
 
   private static class Test0 {
@@ -107,6 +109,24 @@ public class ObjectArrays {
     @Override
     public void run () {
       System.out.println("TestD");
+    }
+  }
+
+  private static class TestE {
+
+    public void runTest() {
+      try {
+        Class<?> cls = Class.forName("edu.ucla.pls.baseline.ObjectArrays$TestE");
+        Object x = cls.newInstance();
+        System.out.println(x.toString());
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+    }
+
+    @Override
+    public String toString() {
+      return "TestE";
     }
   }
 
