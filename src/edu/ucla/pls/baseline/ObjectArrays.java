@@ -14,9 +14,6 @@ public class ObjectArrays {
       new Test1().runTest();
       new TestA().runTest();
       new TestB().runTest();
-      new TestC().runTest();
-      new TestD().runTest();
-      new TestE().runTest();
     }
 
   private static class Test0 {
@@ -58,9 +55,14 @@ public class ObjectArrays {
   private static class TestB {
 
     public void runTest() {
-      ArrayList<Object> os = new ArrayList<Object>();
-      os.add(this);
-      System.out.println(os.get(0).toString());
+      while (this.equals("TestB")) { 
+      }
+      System.out.println("TestB");
+    }
+
+    @Override
+    public boolean equals(Object other) { 
+      return false;
     }
 
     @Override
@@ -68,66 +70,4 @@ public class ObjectArrays {
       return "TestB";
     }
   }
-
-  private static class TestC {
-
-    public void runTest() {
-      ArrayList<Object> os = new ArrayList<Object>();
-      createIt(os, this);
-      printIt(os);
-    }
-
-    public void createIt(Collection<Object> os, Object x) {
-      os.add(x);
-    }
-
-    public void printIt(Collection<Object> os) {
-      for (Object o: os) {
-        System.out.println(o.toString());
-      }
-    }
-
-    public String toString() {
-      return "TestC";
-    }
-  }
-
-  private static class TestD implements Runnable {
-
-    public void runTest() {
-      ArrayList<Runnable> os = new ArrayList<Runnable>();
-      os.add(this);
-      runAll(os);
-    }
-
-    public void runAll(Collection<Runnable> os) {
-      for (Runnable r: os) {
-        r.run();
-      }
-    }
-
-    @Override
-    public void run () {
-      System.out.println("TestD");
-    }
-  }
-
-  private static class TestE {
-
-    public void runTest() {
-      try {
-        Class<?> cls = Class.forName("edu.ucla.pls.baseline.ObjectArrays$TestE");
-        Object x = cls.newInstance();
-        System.out.println(x.toString());
-      } catch (Exception e) {
-        e.printStackTrace();
-      }
-    }
-
-    @Override
-    public String toString() {
-      return "TestE";
-    }
-  }
-
 }
