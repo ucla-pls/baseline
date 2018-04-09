@@ -2,7 +2,7 @@ package edu.ucla.pls.baseline;
 /** This benchmark indicates a problem with the read-write dependency 
  * prediction. 
  */ 
-public class DependentDatarace extends Thread {
+public class DependentDatarace {
   static Object o;
   static int i = 0;
 
